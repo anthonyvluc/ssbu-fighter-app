@@ -10,7 +10,6 @@ import { FighterService } from '../fighter.service';
 export class FightersComponent implements OnInit {
 
   fighters: Fighter[];
-  selectedFighter: Fighter;
 
   constructor(private fighterService: FighterService) { }
 
@@ -21,10 +20,6 @@ export class FightersComponent implements OnInit {
   getFighters(): void {
     this.fighterService.getFighters()
       .subscribe(fighters => this.fighters = fighters);
-  }
-
-  onSelect(fighter: Fighter): void {
-    this.selectedFighter = fighter;
   }
 
 }
