@@ -1,6 +1,22 @@
 <h2>Ultimate Fighters</h2>
-<ul class="fighters">
-  <li *ngFor="let fighter of fighters">
-    <span class="badge">{{fighter.id}}</span> {{fighter.name}}
-  </li>
-</ul>
+<div class="row">
+
+  <div class="col-md-4">
+    <ul class="fighters">
+      <li *ngFor="let fighter of fighters" (click)="onSelect(fighter)">
+        <span class="badge">{{fighter.id}}</span> {{fighter.name}}
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-md-8">
+    <h2>{{selectedFighter.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{selectedFighter.id}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="selectedFighter.name" placeholder="name">
+      </label>
+    </div>
+  </div>
+
+</div>

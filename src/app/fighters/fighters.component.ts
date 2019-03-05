@@ -10,10 +10,15 @@ import { FIGHTERS } from '../fighters-list';
 export class FightersComponent implements OnInit {
 
   fighters = FIGHTERS;
+  selectedFighter: Fighter;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelect(fighter: Fighter): void {
+    this.selectedFighter = fighter;
   }
 
 }
