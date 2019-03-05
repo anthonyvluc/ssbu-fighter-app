@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Fighter } from '../fighter';
-import { FIGHTERS } from '../fighters-list';
+import { FighterService } from '../fighter.service';
 
 @Component({
   selector: 'app-fighters',
@@ -9,12 +9,17 @@ import { FIGHTERS } from '../fighters-list';
 })
 export class FightersComponent implements OnInit {
 
-  fighters = FIGHTERS;
+  fighters: Fighter[];
   selectedFighter: Fighter;
 
-  constructor() { }
+  constructor(private fighterService: FighterService) { }
 
   ngOnInit() {
+    this.getFighters();
+  }
+
+  getFighters(): void {
+    this.fighters = this.fighterService.getFighters();
   }
 
   onSelect(fighter: Fighter): void {
