@@ -10,7 +10,9 @@
     <div class="col-md-5">
       <ul class="fighters">
         <li *ngFor="let fighter of fighters">
-          <span class="badge">{{fighter.id}}</span> {{fighter.name}}
+          <a routerLink="/detail/{{fighter.id}}">
+            <span class="badge">{{fighter.id}}</span> {{fighter.name}}
+          </a>
         </li>
       </ul>
     </div>
