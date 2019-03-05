@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Fighter } from '../fighter';
 
 @Component({
   selector: 'app-fighter-detail',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fighter-detail.component.css']
 })
 export class FighterDetailComponent implements OnInit {
+
+  @Input() fighter: Fighter;
 
   constructor() { }
 
