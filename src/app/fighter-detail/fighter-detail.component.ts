@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
+import { Fighter }        from '../fighter';
 import { FighterService } from '../fighter.service';
 
 @Component({
@@ -25,5 +26,9 @@ export class FighterDetailComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     this.fighterService.getFighter(id)
       .subscribe(fighter => this.fighter = fighter);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }
