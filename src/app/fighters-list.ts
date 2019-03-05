@@ -36,7 +36,6 @@ export const FIGHTERS: Fighter[] = [
   { id: '32', name: 'Ike' },
   { id: '33', name: 'Squirtle' },
   { id: '34', name: 'Ivysaur' },
-  { id: '35', name: 'Charizard (1)' },
   { id: '35', name: 'Charizard' },
   { id: '36', name: 'Diddy Kong' },
   { id: '37', name: 'Lucas' },
