@@ -17,4 +17,10 @@ export class FighterService {
     this.messageService.add('FighterService: fetched fighters');
     return of(FIGHTERS);
   }
+
+  getFighter(id: string): Observable<Fighter> {
+    // TODO: send the message _after_ fetching the heroes
+    this.messageService.add(`FighterService: fetched fighter id=${id}`);
+    return of(FIGHTERS.find(fighter => fighter.id == id));
+  }
 }
