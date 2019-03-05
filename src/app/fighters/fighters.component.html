@@ -7,7 +7,6 @@
   </div>  
 
   <div class="row">
-    <!-- List of fighters -->
     <div class="col-md-5">
       <ul class="fighters">
         <li *ngFor="let fighter of fighters"
@@ -16,11 +15,6 @@
           <span class="badge">{{fighter.id}}</span> {{fighter.name}}
         </li>
       </ul>
-    </div>
-
-    <!-- Selected fighters -->
-    <div class="col-md-7">
-      <app-fighter-detail [fighter]="selectedFighter"></app-fighter-detail>
     </div>
   </div>
 
