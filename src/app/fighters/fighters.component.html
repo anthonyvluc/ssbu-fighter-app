@@ -1,26 +1,28 @@
-<h2>Ultimate Fighters</h2>
-<div class="row">
+<div class="container">
+  <h2>Ultimate Fighters</h2>
+  <div class="row">
 
-  <div class="col-md-4">
-    <ul class="fighters">
-      <li *ngFor="let fighter of fighters"
-        [class.selected]="fighter === selectedFighter"
-        (click)="onSelect(fighter)">
-        <span class="badge">{{fighter.id}}</span> {{fighter.name}}
-      </li>
-    </ul>
-  </div>
+    <div class="col-md-4">
+      <ul class="fighters">
+        <li *ngFor="let fighter of fighters"
+          [class.selected]="fighter === selectedFighter"
+          (click)="onSelect(fighter)">
+          <span class="badge">{{fighter.id}}</span> {{fighter.name}}
+        </li>
+      </ul>
+    </div>
 
-  <div *ngIf="selectedFighter">
-    <div class="col-md-8">
-      <h2>{{selectedFighter.name | uppercase}} Details</h2>
-      <div><span>id: </span>{{selectedFighter.id}}</div>
-      <div>
-        <label>name:
-          <input [(ngModel)]="selectedFighter.name" placeholder="name">
-        </label>
+    <div *ngIf="selectedFighter">
+      <div class="col-md-8">
+        <h2>{{selectedFighter.name | uppercase}} Details</h2>
+        <div><span>id: </span>{{selectedFighter.id}}</div>
+        <div>
+          <label>name:
+            <input [(ngModel)]="selectedFighter.name" placeholder="name">
+          </label>
+        </div>
       </div>
     </div>
-  </div>
 
+  </div>
 </div>
