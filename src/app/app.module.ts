@@ -8,6 +8,7 @@ import { FightersComponent } from './fighters/fighters.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FighterDetailComponent } from './fighter-detail/fighter-detail.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FighterDetailComponent } from './fighter-detail/fighter-detail.componen
     FightersComponent,
     HeaderComponent,
     FooterComponent,
-    FighterDetailComponent
+    FighterDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
