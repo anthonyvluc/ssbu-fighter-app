@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { FightersComponent } from './fighters/fighters.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FighterDetailComponent } from './fighter-detail/fighter-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FightersComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    FighterDetailComponent
   ],
   imports: [
     BrowserModule,
