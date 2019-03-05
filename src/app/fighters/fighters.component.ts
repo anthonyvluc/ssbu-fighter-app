@@ -19,7 +19,8 @@ export class FightersComponent implements OnInit {
   }
 
   getFighters(): void {
-    this.fighters = this.fighterService.getFighters();
+    this.fighterService.getFighters()
+      .subscribe(fighters => this.fighters = fighters);
   }
 
   onSelect(fighter: Fighter): void {

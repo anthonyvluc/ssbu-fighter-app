@@ -1,13 +1,11 @@
 <div *ngIf="fighter">
 
-  <div class="col-md-8">
-    <h2>{{fighter.name | uppercase}} Details</h2>
-    <div><span>id: </span>{{fighter.id}}</div>
-    <div>
-      <label>name:
-        <input [(ngModel)]="fighter.name" placeholder="name">
-      </label>
-    </div>
+  <h2>{{fighter.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{fighter.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="fighter.name" placeholder="name">
+    </label>
   </div>
 
 </div>
