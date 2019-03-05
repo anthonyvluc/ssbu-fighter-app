@@ -1,7 +1,6 @@
-<h2>{{fighter.name | uppercase}} Details</h2>
-<div><span>id: </span>{{fighter.id}}</div>
-<div>
-  <label>name:
-    <input [(ngModel)]="fighter.name" placeholder="name">
-  </label>
-</div>
+<h2>Ultimate Fighters</h2>
+<ul class="fighters">
+  <li *ngFor="let fighter of fighters">
+    <span class="badge">{{fighter.id}}</span> {{fighter.name}}
+  </li>
+</ul>

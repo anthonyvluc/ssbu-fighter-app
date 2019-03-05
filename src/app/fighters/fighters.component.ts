@@ -9,7 +9,7 @@ import { FIGHTERS } from '../fighters-list';
 })
 export class FightersComponent implements OnInit {
 
-  fighter: FIGHTERS;
+  fighters = FIGHTERS;
 
   constructor() { }
 
