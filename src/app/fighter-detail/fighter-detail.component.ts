@@ -12,6 +12,8 @@ import { FighterService } from '../fighter.service';
 })
 export class FighterDetailComponent implements OnInit {
 
+  @Input() fighter: Fighter;
+
   constructor(
     private route: ActivatedRoute,
     private fighterService: FighterService,
