@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+import {PageEvent} from '@angular/material';
+
 import { Fighter } from '../fighter';
 import { FighterService } from '../fighter.service';
 
@@ -10,7 +14,16 @@ import { FighterService } from '../fighter.service';
 export class FightersComponent implements OnInit {
 
   fighters: Fighter[];
-  columnsToDisplay = ['id', 'name'];
+  displayedColumns = ['id', 'name'];
+
+  // MatPaginator Inputs
+  length = 100;
+  pageIndex = 1;
+  pageSize = 10;
+  pageSizeOptions: number[] = [5, 10, 25, 100];
+
+  // MatPaginator Output
+  pageEvent: PageEvent;
 
   constructor(private fighterService: FighterService) { }
 
@@ -20,7 +33,10 @@ export class FightersComponent implements OnInit {
 
   getFighters(): void {
     this.fighterService.getFighters()
-      .subscribe(fighters => this.fighters = fighters);
+      .subscribe(fighters => {
+        this.fighters = fighters,
+        this.length = fighters.length
+      });
   }
 
 }
