@@ -1,0 +1,6 @@
+/* Fighter Detail primary css */
+img.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
