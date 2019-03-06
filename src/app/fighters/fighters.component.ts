@@ -10,7 +10,7 @@ import { FighterService } from '../fighter.service';
 export class FightersComponent implements OnInit {
 
   fighters: Fighter[];
-  columnsToDisplay = ["id", "name"];
+  columnsToDisplay = ['id', 'name'];
 
   constructor(private fighterService: FighterService) { }
 
