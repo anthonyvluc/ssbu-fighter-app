@@ -30,8 +30,7 @@ export class FighterService {
 
   /* GET fighter by id */
   getFighter(id: string): Observable<Fighter> {
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.get<Fighter>(url)
+    return this.http.get<Fighter>(`${this.apiUrl}/${id}`)
       .pipe(
         tap(_ => this.log(`fetched fighter id=${id}`)),
         catchError(this.handleError<Fighter>(`getFighter id=${id}`))
@@ -44,7 +43,7 @@ export class FighterService {
       // if not search term, return empty hero array.
       return of([]);
     }
-    return this.http.get<Fighter[]>(`${this.apiUrl}/?name=${term}`)
+    return this.http.get<Fighter[]>(`${this.apiUrl}?name=${term}`)
     .pipe(
       tap(_ => this.log(`found fighters matching "${term}"`)),
       catchError(this.handleError<Fighter[]>('searchFighters', []))
