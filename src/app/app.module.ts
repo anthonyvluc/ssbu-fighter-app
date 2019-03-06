@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, 
          MatSortModule, MatTableModule } from "@angular/material";
+import 'hammerjs';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
