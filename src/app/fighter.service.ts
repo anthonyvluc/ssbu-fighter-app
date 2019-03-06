@@ -38,6 +38,19 @@ export class FighterService {
       );
   }
 
+  /* GET fighters whose name contains search term */
+  searchFighters(term: string): Observable<Fighter[]> {
+    if (!term.trim()) {
+      // if not search term, return empty hero array.
+      return of([]);
+    }
+    return this.http.get<Fighter[]>(`${this.apiUrl}/?name=${term}`)
+    .pipe(
+      tap(_ => this.log(`found fighters matching "${term}"`)),
+      catchError(this.handleError<Fighter[]>('searchFighters', []))
+    );
+  }
+
   /* PUT: update the fighter on the server */
   // updateFighter (fighter: Fighter): Observable<any> {
   //   const httpOptions = {
