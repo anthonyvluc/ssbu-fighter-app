@@ -5,7 +5,7 @@
            class="form-control mr-sm-2"
            type="search"
            placeholder="Search"
-           aria-label="Search" />
+           aria-label="Search">
     <ul class="search-result">
       <li *ngFor="let fighter of fighters$ | async" >
         <a routerLink="/detail/{{fighter.id}}">
