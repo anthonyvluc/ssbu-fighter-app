@@ -17,6 +17,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FighterSearchComponent } from './fighter-search/fighter-search.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { IndexComponent } from './index/index.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     FooterComponent,
     MessagesComponent,
     FighterSearchComponent,
-    NavbarComponent
+    NavbarComponent,
+    IndexComponent
   ],
   imports: [
     AppRoutingModule,

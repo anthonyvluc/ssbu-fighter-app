@@ -7,34 +7,47 @@
   <div class="row">
     <div class="col-md-12">
 
+      <div class="app-fighters">
+<!-- 
+        <table mat-table class="lessons-table mat-elevation-z8" [dataSource]="fighters">
 
-      <table mat-table class="lessons-table mat-elevation-z8" [dataSource]="fighters$">
+          <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef>ID</th>
+              <td mat-cell *matCellDef="let fighter">{{fighter.id}}</td>
+          </ng-container>
 
-        <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef>ID</th>
-            <td mat-cell *matCellDef="let fighter">{{fighter.id}}</td>
-        </ng-container>
+          <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+              <td mat-cell *matCellDef="let fighter">
+                <a routerLink="/detail/{{fighter.id}}">
+                  {{fighter.name}}
+                </a>
+              </td>
+          </ng-container>
 
-        <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef>Name</th>
-            <td mat-cell *matCellDef="let fighter">{{fighter.name}}</td>
-        </ng-container>
+          <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+          <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        </table> -->
 
-        <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
-
+      <table class="table table-striped table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th *ngFor="let col of columnsToDisplay"
+                 scope="col">{{col}}</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let fighter of fighters">
+          <th scope="row">{{fighter.id}}</th>
+          <td>
+            <a routerLink="/detail/{{fighter.id}}">
+              {{fighter.name}}
+            </a>
+          </td>
+        </tbody>
       </table>
 
-
-
-<!--       <ul class="fighters">
-        <li *ngFor="let fighter of fighters">
-          <a routerLink="/detail/{{fighter.id}}">
-            <span class="badge">{{fighter.id}}</span> {{fighter.name}}
-          </a>
-        </li>
-      </ul> -->
+      </div>
     </div>
   </div>
 
