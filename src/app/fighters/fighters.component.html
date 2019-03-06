@@ -1,20 +1,48 @@
 <div class="container">
 
-  <div class="row">
-    <div class="pb-2 mt-4">
+  <div class="row pb-2 mt-4">
       <h2>Ultimate Fighters</h2>
-    </div>  
   </div>  
 
   <div class="row">
-    <div class="col-md-5">
-      <ul class="fighters">
+    <div class="col-md-12">
+
+
+      <table mat-table class="lessons-table mat-elevation-z8" [dataSource]="dataSource">
+
+        <ng-container matColumnDef="seqNo">
+            <mat-header-cell *matHeaderCellDef>#</mat-header-cell>
+            <mat-cell *matCellDef="let lesson">{{lesson.seqNo}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="description">
+            <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
+            <mat-cell class="description-cell"
+                      *matCellDef="let lesson">{{lesson.description}}</mat-cell>
+
+        </ng-container>
+
+        <ng-container matColumnDef="duration">
+            <mat-header-cell *matHeaderCellDef>Duration</mat-header-cell>
+            <mat-cell class="duration-cell"
+                      *matCellDef="let lesson">{{lesson.duration}}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+    </table>
+
+
+
+<!--       <ul class="fighters">
         <li *ngFor="let fighter of fighters">
           <a routerLink="/detail/{{fighter.id}}">
             <span class="badge">{{fighter.id}}</span> {{fighter.name}}
           </a>
         </li>
-      </ul>
+      </ul> -->
     </div>
   </div>
 
