@@ -1,12 +1,20 @@
-<div *ngIf="fighter">
-  <h2>{{fighter.name | uppercase}}</h2>
+<div class="container">
 
-<!--   <table mat-table [dataSource]="data">
-  </table> -->
-  <div *ngFor="let data of fighter.frames">
-    <h3>{{data["action"]}}</h3><p>{{data["startup"]}}</p>
+  <div class="row pb-2 mt-4">
+    <div *ngIf="fighter">
+      <h2>{{fighter.name | uppercase}}</h2>
+
+    <!--   <table mat-table [dataSource]="data">
+      </table> -->
+      <div *ngFor="let data of fighter.frames">
+        <p *ngIf="data['action']">{{data['action']}} | {{data['startup']}}</p>
+      </div>
+
+      <button (click)="goBack()"
+              type="button" class="btn btn-dark">
+              Go Back</button>
+      <!-- <button (click)="save()">Save</button> -->
+    </div>
   </div>
 
-  <button (click)="goBack()">Go Back</button>
-  <!-- <button (click)="save()">Save</button> -->
 </div>
