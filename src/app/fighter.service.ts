@@ -28,6 +28,7 @@ export class FighterService {
       );
   }
 
+  /* GET fighter by id */
   getFighter(id: string): Observable<Fighter> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get<Fighter>(url)
@@ -36,6 +37,18 @@ export class FighterService {
         catchError(this.handleError<Fighter>(`getFighter id=${id}`))
       );
   }
+
+  /* PUT: update the fighter on the server */
+  // updateFighter (fighter: Fighter): Observable<any> {
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  //   };
+  //   return this.http.put(this.apiUrl, fighter, httpOptions)
+  //   .pipe(
+  //     tap(_ => this.log(`updated fighter id=${fighter.id}`)),
+  //     catchError(this.handleError<any>('updateFighter'))
+  //   );
+  // }
 
   /**
    * Log a FighterService message with the MessageService
