@@ -13,6 +13,7 @@ import { FighterService } from '../fighter.service';
 export class FighterDetailComponent implements OnInit {
 
   fighter: Fighter;
+  imagePath: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -27,7 +28,13 @@ export class FighterDetailComponent implements OnInit {
   getFighter(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.fighterService.getFighter(id)
-      .subscribe(fighter => this.fighter = fighter);
+      .subscribe(fighter => {
+        this.fighter = fighter
+        this.imagePath = `assets/images/${this.fighter.name}`
+            .replace(/\.+/g, '')
+            .replace(/\s+/g, '-')
+            .toLowerCase() + '.jpg'
+      });
   }
 
   goBack(): void {
