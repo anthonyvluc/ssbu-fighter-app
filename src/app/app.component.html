@@ -3,20 +3,19 @@
 
 <!-- body -->
 <main>
-  <div class="container">
 
+  <!-- navbar -->
+  <app-navbar></app-navbar>
+
+  <div class="container">
     <div class="pb-2 mt-4 mb-2 border-bottom">
       <h1>{{title}}</h1>
     </div>
 
-    <nav>
-      <a routerLink="/dashboard">Dashboard</a>
-      <a routerLink="/fighters">Fighters</a>
-    </nav>
     <router-outlet></router-outlet>
-    <app-messages></app-messages>
-
+    <!-- <app-messages></app-messages> -->
   </div>
+
 </main>
 
 <!-- footer -->

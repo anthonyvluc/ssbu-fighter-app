@@ -12,6 +12,7 @@ import { FighterDetailComponent } from './fighter-detail/fighter-detail.componen
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FighterSearchComponent } from './fighter-search/fighter-search.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FighterSearchComponent } from './fighter-search/fighter-search.componen
     FighterDetailComponent,
     FooterComponent,
     MessagesComponent,
-    FighterSearchComponent
+    FighterSearchComponent,
+    NavbarComponent
   ],
   imports: [
     AppRoutingModule,
