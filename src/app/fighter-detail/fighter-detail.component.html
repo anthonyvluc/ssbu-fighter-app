@@ -4,8 +4,9 @@
     <div class="row pb-2 mt-4">
       <div class="col-md-6">
         <h2>{{fighter.name | uppercase}} Frame Data</h2>
+        <hr>
         <div *ngFor="let data of fighter.frames">
-          <b *ngIf="data['action']">{{data['action']}}:</b><p>{{data['startup']}}</p>
+          <p><b *ngIf="data['action']">{{data['action']}}:</b> {{data['startup']}}</p>
         </div>
 
         <button (click)="goBack()"
